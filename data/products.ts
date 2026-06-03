@@ -1,0 +1,28 @@
+import { Product } from '../types';
+
+export const products: Product[] = [
+  { id: '1', name: 'Maçã Gala', emoji: '🍎', category: 'Frutas', price: 7.99, unit: 'kg', desc: 'Maçãs frescas e crocantes, ideais para lanches e sobremesas.', onSale: false },
+  { id: '2', name: 'Banana Prata', emoji: '🍌', category: 'Frutas', price: 5.49, unit: 'kg', desc: 'Bananas maduras e saborosas.', onSale: true },
+  { id: '3', name: 'Laranja Pera', emoji: '🍊', category: 'Frutas', price: 4.99, unit: 'kg', desc: 'Laranjas suculentas ricas em vitamina C.', onSale: false },
+  { id: '4', name: 'Uva Thompson', emoji: '🍇', category: 'Frutas', price: 12.90, unit: 'kg', desc: 'Uvas sem sementes, doces e refrescantes.', onSale: false },
+  { id: '5', name: 'Alface Crespa', emoji: '🥬', category: 'Verduras & Legumes', price: 3.99, unit: 'un', desc: 'Alface fresquinha e crocante.', onSale: false },
+  { id: '6', name: 'Tomate Italiano', emoji: '🍅', category: 'Verduras & Legumes', price: 6.99, unit: 'kg', desc: 'Tomates maduros e vermelhos.', onSale: true },
+  { id: '7', name: 'Cenoura', emoji: '🥕', category: 'Verduras & Legumes', price: 4.49, unit: 'kg', desc: 'Cenouras frescas e crocantes.', onSale: false },
+  { id: '8', name: 'Brócolis Ninja', emoji: '🥦', category: 'Verduras & Legumes', price: 8.90, unit: 'un', desc: 'Brócolis verde-escuro, fonte de ferro.', onSale: false },
+  { id: '9', name: 'Leite Integral', emoji: '🥛', category: 'Laticínios', price: 5.79, unit: 'L', desc: 'Leite integral pasteurizado.', onSale: false },
+  { id: '10', name: 'Queijo Muçarela', emoji: '🧀', category: 'Laticínios', price: 25.90, unit: 'kg', desc: 'Queijo muçarela de búfala.', onSale: true },
+  { id: '11', name: 'Manteiga com Sal', emoji: '🧈', category: 'Laticínios', price: 9.90, unit: '200g', desc: 'Manteiga cremosa com leve toque de sal.', onSale: false },
+  { id: '12', name: 'Ovos Caipiras', emoji: '🥚', category: 'Laticínios', price: 14.90, unit: 'dz', desc: 'Dúzia de ovos caipiras.', onSale: false },
+  { id: '13', name: 'Pão Francês', emoji: '🍞', category: 'Padaria', price: 8.90, unit: 'un', desc: 'Pão francês artesanal.', onSale: false },
+  { id: '14', name: 'Croissant', emoji: '🥐', category: 'Padaria', price: 6.50, unit: 'un', desc: 'Croissant folhado e amanteigado.', onSale: true },
+  { id: '15', name: 'Bolo de Chocolate', emoji: '🍰', category: 'Padaria', price: 35.00, unit: 'un', desc: 'Bolo de chocolate com cobertura cremosa.', onSale: false },
+  { id: '16', name: 'Água Mineral', emoji: '💧', category: 'Bebidas', price: 2.50, unit: 'L', desc: 'Água mineral sem gás.', onSale: false },
+  { id: '17', name: 'Suco de Uva', emoji: '🧃', category: 'Bebidas', price: 7.90, unit: 'L', desc: 'Suco de uva integral.', onSale: false },
+  { id: '18', name: 'Café Torrado', emoji: '☕', category: 'Bebidas', price: 18.90, unit: '500g', desc: 'Café torrado e moído na hora.', onSale: true },
+  { id: '19', name: 'Carne Bovina', emoji: '🥩', category: 'Carnes', price: 39.90, unit: 'kg', desc: 'Carne bovina de primeira qualidade.', onSale: false },
+  { id: '20', name: 'Frango Caipira', emoji: '🍗', category: 'Carnes', price: 16.90, unit: 'kg', desc: 'Frango caipira criado solto.', onSale: false },
+  { id: '21', name: 'Filé de Peixe', emoji: '🐟', category: 'Carnes', price: 45.00, unit: 'kg', desc: 'Filé de tilápia fresca.', onSale: false },
+  { id: '22', name: 'Arroz Branco', emoji: '🍚', category: 'Grãos & Massas', price: 6.50, unit: 'kg', desc: 'Arroz tipo 1, grãos soltinhos.', onSale: false },
+  { id: '23', name: 'Feijão Carioca', emoji: '🫘', category: 'Grãos & Massas', price: 8.90, unit: 'kg', desc: 'Feijão carioca selecionado.', onSale: true },
+  { id: '24', name: 'Macarrão Espaguete', emoji: '🍝', category: 'Grãos & Massas', price: 4.50, unit: 'pct', desc: 'Macarrão tipo espaguete.', onSale: false },
+];

@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "supermercadoapp",
     "name": "SupermercadoApp",
     "slug": "SupermercadoApp",
     "version": "1.0.0",

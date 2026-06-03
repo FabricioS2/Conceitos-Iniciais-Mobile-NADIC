@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import { Text } from 'react-native';
-import { useCart } from '../hooks/useCart';
+import { useCart } from '../../hooks/useCart';
 
 export default function TabLayout() {
   const { items } = useCart();
@@ -12,14 +12,14 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Produtos',
-          tabBarIcon: ({ color }) => <Text style={{ color }}>🛒</Text>,
+          tabBarIcon: ({ color }) => <Text style={{ color }}>🏪</Text>,
         }}
       />
       <Tabs.Screen
         name="cart"
         options={{
           title: 'Carrinho',
-          tabBarIcon: ({ color }) => <Text style={{ color }}>🧺</Text>,
+          tabBarIcon: ({ color }) => <Text style={{ color }}>🛒</Text>,
           tabBarBadge: cartCount > 0 ? cartCount : undefined,
         }}
       />

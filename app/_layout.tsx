@@ -1,17 +1,17 @@
 import { Stack } from 'expo-router';
-import { CartProvider } from './context/CartContext';
-import '../app/global.css'; // Importe seu CSS com Tailwind
+import { CartProvider } from '../context/CartContext';
+import { ToastProvider } from '../context/ToastContext';
+import './global.css';
 
 export default function RootLayout() {
   return (
     <CartProvider>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="product/[id]"
-          options={{ headerTitle: 'Detalhes do Produto' }}
-        />
-      </Stack>
+      <ToastProvider>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          {/* NÃO defina product/[id] aqui! Ela é registrada automaticamente. */}
+        </Stack>
+      </ToastProvider>
     </CartProvider>
   );
 }
