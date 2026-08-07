@@ -29,10 +29,11 @@ export default function ProductList() {
     showToast(`${product.emoji} ${product.name} adicionado!`, 'success');
   };
 
-  return (
-    <View className="flex-1 bg-gray-100">
+  // Componente que será o cabeçalho da lista (barra de pesquisa + categorias + título)
+  const ListHeader = () => (
+    <>
       {/* Barra de pesquisa */}
-      <View className="px-4 pt-3 pb-2">
+      <View className="px-4 pt-2 pb-1">
         <TextInput
           placeholder="Buscar produtos..."
           className="bg-white border-2 border-gray-200 rounded-full px-4 py-2 text-base"
@@ -46,20 +47,20 @@ export default function ProductList() {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        className="px-4 mb-3"
-        contentContainerStyle={{ gap: 8 }}
+        className="px-4"
+        contentContainerStyle={{ gap: 8, paddingBottom: 4 }}
       >
         {categories.map((cat) => {
           const active = cat.filter === selectedCategory || (!cat.filter && !selectedCategory);
           return (
             <TouchableOpacity
               key={cat.name}
-              className={`rounded-full px-4 py-2 border-2 ${
+              className={`self-start rounded-full border-2 px-3 py-2.5 flex-row items-center ${
                 active ? 'bg-green-500 border-green-500' : 'bg-white border-gray-200'
               }`}
               onPress={() => setSelectedCategory(cat.filter || null)}
             >
-              <Text className={`text-sm font-medium ${active ? 'text-white' : 'text-gray-700'}`}>
+              <Text className={`text-xs font-medium leading-none ${active ? 'text-white' : 'text-gray-700'}`}>
                 {cat.emoji} {cat.name}
               </Text>
             </TouchableOpacity>
@@ -67,15 +68,18 @@ export default function ProductList() {
         })}
       </ScrollView>
 
-      {/* Contagem de produtos */}
-      <View className="flex-row justify-between items-center px-4 mb-2">
+      {/* Contagem de produtos (agora como cabeçalho) */}
+      <View className="flex-row justify-between items-center px-4 pt-1 pb-0.5">
         <Text className="text-lg font-bold text-gray-800">
           {selectedCategory || 'Todos os Produtos'}
         </Text>
         <Text className="text-xs text-gray-500">{filteredProducts.length} itens</Text>
       </View>
+    </>
+  );
 
-      {/* Grade de produtos */}
+  return (
+    <View className="flex-1 bg-gray-100">
       {filteredProducts.length > 0 ? (
         <FlatList
           data={filteredProducts}
@@ -85,8 +89,15 @@ export default function ProductList() {
           )}
           numColumns={2}
           columnWrapperStyle={{ justifyContent: 'space-between', paddingHorizontal: 16 }}
-          contentContainerStyle={{ paddingBottom: 20 }}
-          className="flex-1"
+          contentContainerStyle={{
+            paddingBottom: 20,
+            paddingTop: 0, // removido padding top, pois o header já tem espaçamento
+            flexGrow: 1,   // garante que o conteúdo ocupe toda a altura
+          }}
+          style={{ flex: 1 }}
+          ListHeaderComponent={ListHeader}
+          // Remove o espaço extra entre o header e os itens
+          ListHeaderComponentStyle={{ marginBottom: 0 }}
         />
       ) : (
         <View className="flex-1 justify-center items-center p-4">
