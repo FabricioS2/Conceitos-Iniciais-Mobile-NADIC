@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, Stack, router } from 'expo-router';
-import { products } from '../data/products';
-import { useCart } from '../hooks/useCart';
-import { useToast } from '../context/ToastContext';
+import { products } from '../../data/products';
+import { useCart } from '../../hooks/useCart';
+import { useToast } from '../../context/ToastContext';
 import { useState } from 'react';
 
 export default function ProductDetail() {
