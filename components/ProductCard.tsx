@@ -17,8 +17,15 @@ export default function ProductCard({ product, onQuickAdd }: Props) {
               <Text className="text-xs font-bold text-white">🔥 OFERTA</Text>
             </View>
           )}
-          <Text className="text-5xl">{product.emoji}</Text>
-        </View>
+          <Text
+            style={{
+              fontSize: 48,
+              lineHeight: 64,
+              includeFontPadding: true,
+            }}
+          >
+            {product.emoji}
+          </Text>        </View>
         <View className="p-3">
           <Text className="text-xs text-gray-500 uppercase font-semibold">{product.category}</Text>
           <Text className="text-sm font-bold text-gray-800 mt-1" numberOfLines={2}>{product.name}</Text>

@@ -60,7 +60,13 @@ export default function ProductDetail() {
 
         {/* Imagem / Emoji do produto */}
         <View className="h-64 bg-green-50 items-center justify-center">
-          <Text className="text-8xl">
+          <Text
+            style={{
+              fontSize: 80,
+              lineHeight: 110,
+              includeFontPadding: true,
+            }}
+          >
             {product.emoji}
           </Text>
         </View>
