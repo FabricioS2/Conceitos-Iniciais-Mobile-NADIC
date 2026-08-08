@@ -299,6 +299,7 @@ export default function ProductCard({ product, onQuickAdd }: Props) {
 ====================
 ./app/_layout.tsx
 ====================
+// app/_layout.tsx
 import { Stack } from 'expo-router';
 import { CartProvider } from '../context/CartContext';
 import { ToastProvider } from '../context/ToastContext';
@@ -308,9 +309,8 @@ export default function RootLayout() {
   return (
     <CartProvider>
       <ToastProvider>
-        <Stack>
+        <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          {/* NÃO defina product/[id] aqui! Ela é registrada automaticamente. */}
         </Stack>
       </ToastProvider>
     </CartProvider>
@@ -556,31 +556,13 @@ export default function TabLayout() {
   );
 }
 ====================
-./tailwind.config.js
-====================
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  presets: [require("nativewind/preset")],
-  content: [
-    "./app/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./context/**/*.{js,jsx,ts,tsx}",
-    "./hooks/**/*.{js,jsx,ts,tsx}",
-    "./product/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-====================
-./product/[id].tsx
+./app/product/[id].tsx
 ====================
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, Stack, router } from 'expo-router';
-import { products } from '../data/products';
-import { useCart } from '../hooks/useCart';
-import { useToast } from '../context/ToastContext';
+import { products } from '../../data/products';
+import { useCart } from '../../hooks/useCart';
+import { useToast } from '../../context/ToastContext';
 import { useState } from 'react';
 
 export default function ProductDetail() {
@@ -656,3 +638,21 @@ export default function ProductDetail() {
     </>
   );
 }
+====================
+./tailwind.config.js
+====================
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  presets: [require("nativewind/preset")],
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./context/**/*.{js,jsx,ts,tsx}",
+    "./hooks/**/*.{js,jsx,ts,tsx}",
+    "./product/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};

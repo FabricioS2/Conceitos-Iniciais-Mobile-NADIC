@@ -1,3 +1,4 @@
+// app/_layout.tsx
 import { Stack } from 'expo-router';
 import { CartProvider } from '../context/CartContext';
 import { ToastProvider } from '../context/ToastContext';
@@ -7,9 +8,8 @@ export default function RootLayout() {
   return (
     <CartProvider>
       <ToastProvider>
-        <Stack>
+        <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          {/* NÃO defina product/[id] aqui! Ela é registrada automaticamente. */}
         </Stack>
       </ToastProvider>
     </CartProvider>

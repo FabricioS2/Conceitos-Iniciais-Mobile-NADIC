@@ -44,7 +44,7 @@ export default function CartScreen() {
   }
 
   return (
-    <View className="flex-1 bg-gray-100 p-4">
+    <View className="flex-1 bg-gray-100 p-4 pt-12">
       <FlatList
         data={items}
         keyExtractor={(item) => item.product.id}

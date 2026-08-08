@@ -79,7 +79,7 @@ export default function ProductList() {
   );
 
   return (
-    <View className="flex-1 bg-gray-100">
+    <View className="flex-1 bg-gray-100 pt-12">
       {filteredProducts.length > 0 ? (
         <FlatList
           data={filteredProducts}

@@ -7,7 +7,7 @@ export default function TabLayout() {
   const cartCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <Tabs>
+    <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen
         name="index"
         options={{
@@ -15,6 +15,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <Text style={{ color }}>🏪</Text>,
         }}
       />
+
       <Tabs.Screen
         name="cart"
         options={{
